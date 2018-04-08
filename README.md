@@ -44,5 +44,6 @@ Where:
   - `9090`: JSON-RPC Server port of DomotiGa.
   - `privledged` - Gives access to all devices, includes serial devices. This is less secure, but makes configuration easier. Use exact device mapping if you don't want to use privledged.
 
+
 Browse to `http://your-host-ip:5800` to access the DomotiGa GUI.
 
