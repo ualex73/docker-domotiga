@@ -31,7 +31,7 @@ docker run [-d] \
     -p 5800:5800 \
     -p 9090:9090 \
     -v /docker/domotiga/config:/domotiga/config \
-    -v /docker/domotiga/log:/domotiga/log \
+    -v /docker/domotiga/logs:/domotiga/logs \
     -v /docker/domotiga/rrd:/domotiga/rrd \
     -v /docker/domotiga/mysql:/var/lib/mysql \
     ualex73/domotiga
