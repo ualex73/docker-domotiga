@@ -1,8 +1,7 @@
 DomotiGa
 ========
 
-This image allow to run a headless instance of domotiga (https://www.domotiga.nl/).
-Domotiga is an OSS Home Automation for Linux.
+This image allow to run a headless instance of DomotiGa (https://www.domotiga.nl/). It includes an embedded MySQL Server, but it is possible to use an external one.
 
 Ports exposed
 -------------
