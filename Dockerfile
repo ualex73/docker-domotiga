@@ -1,6 +1,11 @@
 # Pull base image
 FROM jlesage/baseimage-gui:ubuntu-16.04
 
+LABEL maintainer="Alex <ualex73@gmail.com>"
+
+ARG VERSION="1.0.025"
+ARG BUILDDATE="20180414"
+
 # Recommends are as of now still abused in many packages
 RUN echo 'APT::Install-Recommends "0";' >> /etc/apt/apt.conf.d/no-recommends
 RUN echo "APT::Get::Assume-Yes "true";" > /etc/apt/apt.conf.d/always-yes
@@ -32,7 +37,7 @@ RUN apt-get install mysql-server
 RUN apt-get install git-core
 
 # Download DomotiGa software from git
-RUN GIT_SSL_NO_VERIFY=true git clone -b beta --single-branch https://github.com/DomotiGa/DomotiGa.git /domotiga
+RUN GIT_SSL_NO_VERIFY=true git clone --single-branch https://github.com/DomotiGa/DomotiGa.git /domotiga
 
 # Cleanup git of DomotiGa
 RUN rm -rf /domotiga/.git
