@@ -14,11 +14,6 @@ chown -R $USER_ID:$GROUP_ID /domotiga/config
 chown -R $USER_ID:$GROUP_ID /domotiga/logs
 chown -R $USER_ID:$GROUP_ID /domotiga/rrd
 
-mkdir -p /var/run/mysqld
-chown -R $USER_ID:$GROUP_ID /var/lib/mysql
-chown -R $USER_ID:$GROUP_ID /var/log/mysql
-chown -R $USER_ID:root /var/run/mysqld
-
 exit 0
 
 # vim: set ft=sh :
