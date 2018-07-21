@@ -4,7 +4,7 @@ FROM jlesage/baseimage-gui:ubuntu-16.04
 LABEL maintainer="Alex <ualex73@gmail.com>"
 
 ARG VERSION="1.0.025"
-ARG BUILDDATE="20180719"
+ARG BUILDDATE="20180721"
 
 # Recommends are as of now still abused in many packages
 RUN echo 'APT::Install-Recommends "0";' >> /etc/apt/apt.conf.d/no-recommends && \
