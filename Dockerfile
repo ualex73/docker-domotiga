@@ -3,6 +3,7 @@ FROM jlesage/baseimage-gui:ubuntu-16.04
 
 LABEL maintainer="Alex <ualex73@gmail.com>"
 
+# Version information
 ARG VERSION="1.0.025"
 ARG BUILDDATE="20180801"
 
