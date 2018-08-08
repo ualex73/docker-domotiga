@@ -5,7 +5,7 @@ LABEL maintainer="Alex <ualex73@gmail.com>"
 
 # Version information
 ARG VERSION="1.0.025"
-ARG BUILDDATE="20180801"
+ARG BUILDDATE="20180808"
 
 # Recommends are as of now still abused in many packages
 RUN echo 'APT::Install-Recommends "0";' >> /etc/apt/apt.conf.d/no-recommends && \
