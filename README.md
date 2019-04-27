@@ -27,7 +27,9 @@ docker run [-d] \
     --privileged \
     -p 5800:5800 \
     -p 9090:9090 \
+    -p 19009:19009/udp \
     -e MYSQL_HOST=192.168.1.1 \
+    -v /etc/localtime:/etc/localtime:ro \
     -v /docker/domotiga/config:/domotiga/config \
     -v /docker/domotiga/logs:/domotiga/logs \
     -v /docker/domotiga/rrd:/domotiga/rrd \
@@ -53,12 +55,12 @@ version: '3'
 services:
 
   mysql_domotiga:
-    container_name: mysql_domotiga
+    container_name: db-domotiga
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
     volumes:
-      - /docker/mysql_domotiga:/var/lib/mysql
+      - /docker/db-domotiga:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=example
 
@@ -68,14 +70,15 @@ services:
     restart: unless-stopped
     privileged: true
     links:
-      - mysql_domotiga
+      - db-domotiga
     ports:
       - 5800:5800
       - 9090:9090
+      - 19009:19009/udp
     environment:
-      - TZ=Europe/Amsterdam
-      - MYSQL_HOST=mysql_domotiga
+      - MYSQL_HOST=db-domotiga
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - /docker/domotiga/config:/domotiga/config
       - /docker/domotiga/logs:/domotiga/logs
       - /docker/domotiga/rrd:/domotiga/rrd
